@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "one" {
     image_id = ""
     instance_type = "t2.micro"
-    key_name = "shiva"
+    key_name = "sai"
     security_groups = [aws_security_group.mysg.id]
        user_data = <<-EOF
         #!/bin/bash
@@ -16,7 +16,7 @@ resource "aws_launch_configuration" "one" {
 resource "aws_elb" "myelb" {
     name = "Terraform-lb"
     security_groups = [aws_security_group.mysg.id]
-    subnets = [aws_subnet.mysubnet1.id, aws_subnet.mysubnet2]
+    subnets = [aws_subnet.mysubnet1.id, aws_subnet.mysubnet2.id]
     listener {
       instance_port = 80
       instance_protocol = "http"
