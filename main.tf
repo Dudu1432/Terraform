@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "one" {
-    image_id = ""
+    image_id = "i-04336d0dbe7614bd1"
     instance_type = "t2.micro"
     key_name = "sai"
     security_groups = [aws_security_group.mysg.id]
