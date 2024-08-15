@@ -10,7 +10,7 @@ resource "aws_security_group" "mysg" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-    ingress = {
+    ingress {
         from_port = 0
         to_port = 0
         protocol = "tcp"
